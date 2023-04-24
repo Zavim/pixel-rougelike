@@ -102,7 +102,7 @@ const Crystal = () => {
       <icosahedronGeometry args={[0.2]} />
       <meshPhongMaterial
         // color="#2379cf"
-        color="#00ffcf"
+        color="#ff0000"
         emissive="#143542"
         shininess={10}
         specular="#ffffff"
@@ -156,7 +156,15 @@ function Scene() {
       <Crystal />
       <Player />
       <Effects>
-        <renderPixelatedPass args={[resolution, 6, scene, camera]} />
+        <renderPixelatedPass
+          args={[
+            resolution,
+            6,
+            scene,
+            camera,
+            { normalEdgeStrength: 0.1, depthEdgeStrength: 0.1 },
+          ]}
+        />
       </Effects>
     </>
   );
